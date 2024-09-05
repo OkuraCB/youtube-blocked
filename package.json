@@ -1,0 +1,41 @@
+{
+  "name": "youtube-blocked",
+  "productName": "YouTube TV",
+  "version": "1.0.0",
+  "description": "Simple Youtube TV wrapper for desktop based on electron.",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron main.js",
+    "debug": "electron . --inspect",
+    "build": "npm run build:win && npm run build:linux",
+    "build:win": "electron-builder --win --x64 --ia32",
+    "build:linux": "electron-builder --linux --arm64"
+  },
+  "dependencies": {
+    "@cliqz/adblocker-electron": "^1.33.1",
+    "cross-fetch": "^4.0.0"
+  },
+  "devDependencies": {
+    "electron": "^20.1.1",
+    "electron-builder": "^23.0.2",
+    "typescript": "^4.7.3"
+  },
+  "build": {
+    "productName": "YouTube TV",
+    "appId": "com.youtube.tv",
+    "asar": true,
+    "linux": {
+      "target": [
+        "deb",
+        "rpm"
+      ],
+      "icon": "./icon.png",
+      "packageCategory": "Video"
+    },
+    "win": {
+      "target": "NSIS",
+      "icon": "build/icon.ico"
+    }
+  },
+  "author": "Arthur Illa <arthur-illa@hotmail.com>"
+}
