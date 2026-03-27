@@ -9,10 +9,10 @@
     "debug": "electron . --inspect",
     "build": "npm run build:win && npm run build:linux",
     "build:win": "electron-builder --win --x64 --ia32",
-    "build:linux": "electron-builder --linux --arm64"
+    "build:linux": "electron-builder --arm64"
   },
   "dependencies": {
-    "@cliqz/adblocker-electron": "^1.33.1",
+    "@ghostery/adblocker-electron": "^2.14.1",
     "cross-fetch": "^4.0.0"
   },
   "devDependencies": {

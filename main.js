@@ -1,5 +1,5 @@
 const { app, BrowserWindow } = require("electron");
-const { ElectronBlocker, fullLists } = require("@cliqz/adblocker-electron");
+const { ElectronBlocker, fullLists } = require("@ghostery/adblocker-electron");
 const fetch = require("cross-fetch");
 const { readFileSync, writeFileSync } = require("fs");
 
