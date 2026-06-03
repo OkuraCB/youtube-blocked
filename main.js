@@ -23,9 +23,8 @@ async function createWindow() {
   win.setFullScreen(true);
 
   // Set adblock
-  const blocker = await ElectronBlocker.fromLists(
+  const blocker = await ElectronBlocker.fromPrebuiltAdsAndTracking(
     fetch,
-    fullLists,
     {
       enableCompression: true,
     },
@@ -33,7 +32,7 @@ async function createWindow() {
       path: "engine.bin",
       read: async (...args) => readFileSync(...args),
       write: async (...args) => writeFileSync(...args),
-    }
+    },
   );
 
   blocker.enableBlockingInSession(win.webContents.session);
